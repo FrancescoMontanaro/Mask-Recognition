@@ -25,9 +25,13 @@ In addition to data augmentation, few other techniques have been implemented:
 ### Experiment 1
 In the first experiments, it has been tried to build a model from scratch. Conv2D -> Activation (Relu) -> Maxpool (2,2) blocks have been concatenated, doubling the number of filters for each block. Depth and number of filters of the first block are free parameters. The best kernel size found was 3x3. A cross-validation approach has been tried, to see if it could bring to better performances as shown in the cross-validation script; due to the poor results and higher time complexity, cross-validation has been discarded in favour of mini-batches. After many tuning processes the best model has been reported in the notebook, and its trends are presented here.
 
+<img width="522" alt="Schermata 2021-07-15 alle 18 01 38" src="https://user-images.githubusercontent.com/56433128/125819783-21073f71-75ee-4535-94c5-5dab4a1b0442.png">
+
 The accuracy achieved on the test set is **0.71111**.
 
 ### Experiment 2
 For what concerns the experiments made with the help of transfer learning, a first approach without neither data augmentation nor fine tuning has been performed using InceptionResNetV2 architecture. Due to the presence of a big amount of parameters,there wasn’t such an improvement from the previous model, therefore fine tuning has been implemented, which brought to more than 80% of accuracy on the test set. In order to improve even more the performance by reducing overfitting, a Global Average Pooling has been added. Many models have been used like ResNet50V2, ResNet101V2, DenseNet101 and others, but ResNet152V2 brought to the best performances on the test set.
+
+<img width="455" alt="Schermata 2021-07-15 alle 18 02 19" src="https://user-images.githubusercontent.com/56433128/125819907-c4f63aec-de1b-4879-9043-b43a1792e0aa.png">
 
 The accuracy achieved on the test set is **0.93777**.
